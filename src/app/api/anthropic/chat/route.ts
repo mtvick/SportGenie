@@ -6,7 +6,7 @@ export const runtime = "edge";
 export async function POST(req: Request) {
   const { messages } = await req.json();
   const result = await streamText({
-    model: anthropic("claude-3-5-sonnet-20240620"),
+    model: anthropic("claude-3-sonnet"),
     messages: convertToCoreMessages(messages),
     system: "You are a helpful AI assistant",
   });
